@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+         <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+		
+	<title>Hello There</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+	<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("http://192.168.0.2/server/",function(data,status){
+      $("#testdiv").html(data);
+	  $("#testdiv").trigger('create');
+	  $.mobile.changePage("#page3");
+    });
+  });
+});
+</script>
+</head>
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="header" data-theme="f">
+			<h1>Sign Up!</h1>
+			
+		</div>
+		<div data-role="content">
+			<form name="dataform">
+			<input type="text" id ="usrname1" name="usrname" size=20 placeholder="Full Name">
+			<input type="email" name="email" size=20 placeholder="Email">
+			<input type="number" name="mobile" size=20 placeholder="Mobile No.">
+			<label for="dechk">Keep me updated on new offers!!</label><input type="checkbox" id="dechk" data-theme="c">
+			<label for="derad">Via Email</label><input type="radio" id="derad" data-theme="c" name="pr1">
+			<label for="derad2">Email and SMS</label><input type="radio" id="derad2" data-theme="c" name="pr1">
+			<input type="range" min=0 max=10 id="rngdef" data-theme="e" value=2>
+			<select name="city" id="citysel" data-theme="g">
+			<option value="Delhi">Mumbai</option><option value="Delhi">Delhi</option><option value="Delhi">Delhi</option><option value="Delhi">Delhi</option>
+			</select>
+			</form>
+			<div id="testdiv"></div>
+			<br><button data-icon="flat-menu" data-theme="d">Submit</button>
+		</div>
+		<div data-role="footer" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#page1" data-role="button">First Page</a></li>
+					<li><a href="#page2" data-role="button">Second Page</a></li>
+					<li><a href="#page3" data-role="button">Third Page</a></li>
+				</ul>
+			</div>
+			<h1>Footer</h1>
+		</div>
+	</div>
+	<div data-role="page" id="page2">
+		<div data-role="header" data-theme="b">
+			<h1>Page 2</h1>
+			<div data-role="navbar" data-theme="e">
+				<ul>
+					<li><a href="#page1" data-role="button">First Page</a></li>
+					<li><a href="#page2" data-role="button">Second Page</a></li>
+					<li><a href="#page3" data-role="button">Third Page</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<ol data-role="listview">
+			<li><a href="#page1">Something</a></li>
+			<li><a href="">Something</a></li>
+			<li><a href="">Something</a></li>
+			</ul>
+						
+		</div>
+		<div data-role="footer" data-theme="b">
+			<h1>Footer</h1>
+		</div>
+	</div>
+	<div data-role="page" id="page3">
+		<div data-role="header" data-theme="b">
+			<h1>Thank You!</h1>
+			<div data-role="navbar" data-theme="e">
+				<ul>
+					<li><a href="#page1" data-role="button">First Page</a></li>
+					<li><a href="#page2" data-role="button">Second Page</a></li>
+					<li><a href="#page3" data-role="button">Third Page</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			This is page 3. <br>
+		</div>
+		<div data-role="footer" data-theme="b">
+			<a href="#" data-icon="delete">Cancel</a><h1>Footer</h1>
+		</div>
+	</div>
+</body>
+</html>
