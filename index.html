@@ -15,7 +15,7 @@
 	<script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("http://192.168.0.2/server/",function(data){
+    $.get("https://raw.githubusercontent.com/piyushpatel2412/TestJQMobile/master/index.php",function(data){
       $("#testdiv").html(data);
 	  $("#testdiv").trigger('create');
     });
