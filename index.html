@@ -15,7 +15,7 @@
 	<script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("https://raw.githubusercontent.com/piyushpatel2412/TestJQMobile/master/index.php",function(data){
+    $.get("https://raw.githubusercontent.com/piyushpatel2412/TestJQMobile/master/data.html",function(data){
       $("#testdiv").html(data);
 	  $("#testdiv").trigger('create');
     });
